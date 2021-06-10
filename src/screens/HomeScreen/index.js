@@ -22,9 +22,9 @@ const HomeScreen = () => {
 
     originLatitude: 12.96652374097537,
     oreiginLongitude:77.63448163997789,
-
-    destLatitude: 12.96652374097535,
-    destLongitude: 77.63448163997789,
+     
+    destLatitude: 12.959749457580495,
+    destLongitude: 77.65452362094445,
 
     user: {
       rating: 4.8,
@@ -80,7 +80,7 @@ const HomeScreen = () => {
       return (
         <View style={{ alignItems: 'center' }}>
           <View style={{flexDirection: 'row', alignItems: 'center',justifyContent: 'center', backgroundColor: '#cb1a1a', width: 200, padding: 10,  }}>
-            <Text style={{color: 'white', fontWeight: 'bold'}}>COMPLETE {order.type}</Text>
+            <Text style={{color: 'white', fontWeight: 'bold'}}>Accept and Exchange {order.type}</Text>
           </View>
           <Text style={styles.bottomText}>{order.user.name}</Text>
         </View>
@@ -97,7 +97,7 @@ const HomeScreen = () => {
             </View>
             <Text>{order.distance ? order.distance.toFixed(1) : '?'} km</Text>
           </View>
-          <Text style={styles.bottomText}>Dropping off {order.user.name}</Text>
+          <Text style={styles.bottomText}>On the way to {order.user.name}</Text>
         </View>
       )
     }
