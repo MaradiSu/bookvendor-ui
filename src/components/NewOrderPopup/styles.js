@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#00000099',
   },
   popupContainer: {
-    backgroundColor: 'black',
+    backgroundColor: '#4a4a4a',
     borderRadius: 10,
     height: 250,
     alignItems: 'center',

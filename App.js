@@ -12,6 +12,7 @@ import {
   StatusBar,
   PermissionsAndroid , Platform
 } from 'react-native';
+import Router from './src/navigation/Root';
 
 import HomeScreen from './src/screens/HomeScreen';
 import Geolocation from '@react-native-community/geolocation';
@@ -56,9 +57,7 @@ const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <HomeScreen />
-      </SafeAreaView>
+      <Router />
     </>
   );
 };

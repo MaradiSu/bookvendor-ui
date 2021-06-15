@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Dimensions, Pressable,Alert } from "react-native";
+import { View, Text, Dimensions, Pressable } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
 import MapViewDirections from 'react-native-maps-directions';
 import Entypo from "react-native-vector-icons/Entypo";
@@ -8,6 +8,8 @@ import styles from './styles.js'
 import NewOrderPopup from "../../components/NewOrderPopup";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from '@react-navigation/native';
+
+//const navigation = useNavigation();
 const origin = {latitude:12.96652374097535, longitude: -16.260845};
 const destination = {latitude: 12.96652374097535, longitude:77.6758468};
 const GOOGLE_MAPS_APIKEY = 'AIzaSyAC3SHgmHPIYDFhySZqnrO2S05e2m6WXho';
@@ -19,12 +21,12 @@ const HomeScreen = () => {
   const [newOrder, setNewOrder] = useState({
     id: '1',
     type: 'For book Rich Dad Poor Dad',
+   
+    originLatitude:  14.444874735114102,
+    oreiginLongitude:75.90176023998613,
      
-    originLatitude:  12.966617838340886,
-    oreiginLongitude:77.63459965716496,
-     
-    destLatitude: 12.966617838340886,
-    destLongitude: 77.63459965716496,
+    destLatitude: 14.444874735114102,
+    destLongitude: 75.90176023998613,
 
     user: {
       rating: 4.8,
@@ -80,7 +82,7 @@ const HomeScreen = () => {
       return (
         <View style={{ alignItems: 'center' }}>
           <View style={{flexDirection: 'row', alignItems: 'center',justifyContent: 'center', backgroundColor: '#cb1a1a', width: 200, padding: 10,  }}>
-            <Text style={{color: 'white', fontWeight: 'bold'}} onPress={() => {Alert.alert('shared and Saved in the transactions')}} > Accept and Share books</Text>
+            <Text style={{color: 'white', fontWeight: 'bold'}}>Accept and Share books</Text>
           </View>
           <Text style={styles.bottomText}>{order.user.name}</Text>
         </View>
@@ -152,7 +154,7 @@ const HomeScreen = () => {
       </MapView>
 
       <Pressable
-        onPress={() => Alert.alert("Click on Chat for demo mdule")}
+        onPress={() => console.warn('Chat Support')}
         style={styles.balanceButton}>
         <Text style={styles.balanceText}>
           <Text style={{ color: 'green' }}></Text>
